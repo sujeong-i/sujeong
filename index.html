@@ -17,6 +17,23 @@
     <script>
         $(function () {
 
+            
+            let header = document.getElementById('header');
+            let section_02 = document.getElementById('section-02'); 
+
+            console.log(section_02.offsetTop)
+
+            window.addEventListener('scroll', () => {
+                let scrollBar = window.scrollY;
+
+
+                if (scrollBar > section_02.offsetTop) {
+                    header.classList.add('active');
+                } else {
+                    header.classList.remove('active');
+                }
+            });
+
             setTimeout(function () {
                 $('.video').fadeOut(500);
             }, 10010);
@@ -50,13 +67,29 @@
             });
 
             var swiper = new Swiper('.SideSlides', {
-                slidesPerView: 3.2,
+                slidesPerView: 'auto',
                 spaceBetween: 24,
                 // centeredSlides: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
+                // pagination: {
+                //     el: '.swiper-pagination',
+                //     clickable: true,
+                // },
+                grabCursor: true,
+            });
+
+            var swiper = new Swiper('.videoSlide', {
+                slidesPerView: 4,
+                spaceBetween: 24,
+                // centeredSlides: true,
+                // pagination: {
+                //     el: '.swiper-pagination',
+                //     clickable: true,
+                // },
+                grabCursor: true,
+            });
+
+            $('.close').on('click', function(){
+                $('.video').hide();
             });
 
 
@@ -66,6 +99,7 @@
 </head>
 
 <body>
+    
     <div id="wrap">
         <header class="header" id="header">
             <div class="inner">
@@ -75,10 +109,11 @@
 
                 <nav class="nav">
                     <ul class="gnb">
-                        <li><a href="#">메인 프로젝트</a></li>
-                        <li><a href="#">사이드 프로젝트</a></li>
-                        <li><a href="#">하수정 소개</a></li>
-                        <li><a href="#">연락처</a></li>
+                        <li><a href="#section-02P">메인프로젝트</a></li>
+                        <li><a href="#section-03">사이드프로젝트</a></li>
+                        <li><a href="#section-04">영상프로젝트</a></li>
+                        <li><a href="#section-05">하수정소개</a></li>
+                        <li><a href="#footer">연락처</a></li>
                     </ul>
                 </nav>
             </div>
@@ -87,6 +122,9 @@
         <main id="main">
             <section class="visual" id="main_visual">
                 <div class="video">
+                    <button type="button" class="close">
+                        <img src="image/icon-close.svg" alt="닫기"><span>영상닫기</span>
+                    </button>
                     <video src="image/visual.mp4" loop autoplay muted></video>
                 </div>
                 <div class="inner">
@@ -103,6 +141,7 @@
                         </div>
                     </div><!-- text_wrap -->
 
+                     
                     <div class="image">
                         <img src="image/visual.png" alt="체인이미지">
                     </div>
@@ -157,7 +196,7 @@
 
                 </section><!-- section-01 -->
 
-                <section class="section-02 section">
+                <section class="section-02 section" id="section-02">
 
                     <div class="section_top">
                         <div class="title">
@@ -224,7 +263,7 @@
                     </div><!-- section_top -->
 
 
-                    <div class="content_wrap inner-big">
+                    <div class="content_wrap inner-big" id="section-02P">
                         <div class="content" id="project-01">
                             <div class="content_in">
                                 <div class="image_slide">
@@ -304,7 +343,7 @@
                                             </ul>
                                         </div><!-- .info -->
                                         <ul class="btns">
-                                            <li class="stroke"><a href="#">VIEW PROCESS</a></li>
+                                            <li class="stroke"><a href="image/portfolio/process-floren.pdf" target="_blank">VIEW PROCESS</a></li>
                                             <li class="stroke"><a
                                                     href="https://www.figma.com/design/hdeG4G8UedG6tMlUzxewfl/%ED%94%8C%EB%A1%9C%EB%A0%8C-%EC%9B%90%EB%B3%B8?node-id=1-4&t=6dRo32BtzR9hYG6H-1"
                                                     target="_blank">VIEW FIGMA</a></li>
@@ -466,7 +505,7 @@
                                             </ul>
                                         </div><!-- .info -->
                                         <ul class="btns">
-                                            <li class="stroke"><a href="image/portfolio/process-LifeInBusan.pdf"
+                                            <li class="fill"><a href="image/portfolio/process-LifeInBusan.pdf"
                                                     target="_blank">VIEW PROCESS</a></li>
                                             <!-- <li class="fill"><a href="https://dmsgktn416.cafe24.com/skin-skin3"
                                                     target="_blank">VISIT WEBSITE</a></li> -->
@@ -516,8 +555,8 @@
                                         </div><!-- info_top -->
 
                                         <strong class="sub_text">Claude Code와 Figma MCP로 구성한 디자인 시스템 정리 워크플로우</strong>
-                                        <p class="text">운영 중인 웹사이트의 디자인 요소를 개발자 도구로 추출하고, Claude Code와 Figma MCP를 연동해
-                                            피그마로 옮긴 뒤 컬러·타이포·컴포넌트를 재정리한 개인 프로젝트입니다.<br />
+                                        <p class="text">운영 중인 웹사이트의 디자인 요소를 개발자 도구로 추출하고, Claude Code와 Figma MCP로 자동화 연결
+                                            후 컬러·타이포·컴포넌트를 재정리한 개인 프로젝트입니다.<br />
                                             코드에서 실제 사용 중인 값을 추출해 피그마로 옮기고, 중복과 불일치를 통합해 재사용 가능한 토큰과 컴포넌트로 재구성할 수 있습니다.
                                         </p>
 
@@ -559,7 +598,7 @@
 
                 </section><!-- section-02 -->
 
-                <section class="section section-03">
+                <section class="section section-03" id="section-03">
                     <div class="inner">
                         <div class="title">
                             <h3>사이드 프로젝트</h3>
@@ -568,170 +607,243 @@
                     </div><!-- .inner -->
                     <div class="content">
                         <p class="inner comment">※학습 목적의 개인 프로젝트이며, 본 제품 • 브랜드와 무관합니다.</p>
-                        <div class="swiper SideSlides">
-                            <div class="swiper-wrapper">
+                        <div class="swiper_wrap">
+                            <div class="swiper SideSlides">
+                                <div class="swiper-wrapper">
 
-                                <div class="swiper-slide item">
-                                    <div class="image">
-                                        <img src="image/portfolio/motion-vie.gif" alt="비에메종">
-                                    </div>
-                                    <div class="info">
-                                        <strong class="tit">비에메종</strong>
-                                        <p class="sub_txt">메인페이지 리뉴얼 / 반응형 / 2023</p>
-                                        <!--  <p class="info_text">
-                                            [개인작업] 그리드에 맞춰 레이아웃 배치, 웹표준을 고려한 마크업 코딩 진행, 바닐라스크립트 활용하여 반응형 홈페이지 구현
-                                        </p> -->
-                                        <p class="role">Figma, HTML, CSS, Javascript</p>
-                                        <div class="btns">
-                                            <li class="stroke"><a href="">VIEW FIGMA</a></li>
-                                            <li class="fill"><a href="#">VISIT WEBSITE</a></li>
-                                        </div><!-- btns -->
-                                    </div><!-- info -->
-                                </div> <!-- .item / 웹-->
-
-
-                                <div class="swiper-slide item">
-                                    <div class="image">
-                                        <video src="image/portfolio/video-beauty.mp4" autoplay muted loop></video>
-                                    </div>
-                                    <div class="info">
-                                        <strong class="tit">한율 유자 수면팩</strong>
-                                        <p class="sub_txt">AI활용 제품 홍보 영상</p>
-                                        <!--  <p class="info_text">
-                                            [개인작업] 그리드에 맞춰 레이아웃 배치, 웹표준을 고려한 마크업 코딩 진행, 바닐라스크립트 활용하여 반응형 홈페이지 구현
-                                        </p> -->
-                                        <p class="role">ChatGPT, Google Flow, Premiere Pro</p>
-                                        <div class="btns">
-                                            <li class="stroke"><a href="">VIEW FIGMA</a></li>
-                                            <li class="fill"><a href="#">VISIT WEBSITE</a></li>
-                                        </div><!-- btns -->
-                                    </div><!-- info -->
-                                </div> <!-- .item / 영상-->
-
-                                <div class="swiper-slide item">
-                                    <div class="image">
-                                        <video src="image/portfolio/product.mp4" autoplay muted loop></video>
-                                    </div>
-                                    <div class="info">
-                                        <strong class="tit">멀티비타민</strong>
-                                        <p class="sub_txt">AI활용 제품 홍보영상</p>
-                                        <!-- <p class="info_text">
-                                            [개인작업] 그리드에 맞춰 레이아웃 배치, 웹표준을 고려한 마크업 코딩 진행, 바닐라스크립트 활용하여 반응형 홈페이지 구현
-                                        </p> -->
-                                        <p class="role">Google Flow, Premiere Pro</p>
-                                        <div class="btns">
-                                            <li class="stroke"><a href="">VIEW FIGMA</a></li>
-                                            <li class="fill"><a href="#">VISIT WEBSITE</a></li>
-                                        </div><!-- btns -->
-                                    </div><!-- info -->
-                                </div> <!-- .item / 영상-->
+                                    <div class="swiper-slide item">
+                                        <div class="image">
+                                            <img src="image/portfolio/motion-vie.gif" alt="비에메종">
+                                        </div>
+                                        <div class="info">
+                                            <strong class="tit">비에메종</strong>
+                                            <p class="sub_txt">메인페이지 리뉴얼 / 반응형 / 2023</p>
+                                            <!--  <p class="info_text">
+                                                [개인작업] 그리드에 맞춰 레이아웃 배치, 웹표준을 고려한 마크업 코딩 진행, 바닐라스크립트 활용하여 반응형 홈페이지 구현
+                                            </p> -->
+                                            <ul class="role">
+                                                <li>Figma</li>
+                                                <li>HTML</li>
+                                                <li>CSS</li>
+                                                <li>Javascript</li>
+                                            </ul>
+                                            <div class="btns">
+                                                <li class="stroke"><a href="">VIEW FIGMA</a></li>
+                                                <li class="fill"><a href="#">VISIT WEBSITE</a></li>
+                                            </div><!-- btns -->
+                                        </div><!-- info -->
+                                    </div> <!-- .item / 웹-->
 
 
-                                <div class="swiper-slide item">
-                                    <div class="image">
-                                        <img src="image/portfolio/event-1.jpg"
-                                            alt="여름 시즌 무료배송 2개 이상 구매 시 추가할인 + 무료로 배송해 드립니다. 2026.05.01 부터 2026.09.01까지">
-                                    </div>
-                                    <div class="info">
-                                        <strong class="tit">여름 이벤트 배너</strong>
-                                        <p class="sub_txt">이벤트 배너 디자인 / 2026</p>
-                                        <!-- <p class="info_text">
-                                            [개인작업] 그리드에 맞춰 레이아웃 배치, 웹표준을 고려한 마크업 코딩 진행, 바닐라스크립트 활용하여 반응형 홈페이지 구현
-                                        </p> -->
-                                        <p class="role">Figma, Google Flow</p>
-                                        <div class="btns">
-                                            <li class="fill"><a href="">VIEW IMAGE</a></li>
-                                        </div><!-- btns -->
-                                    </div><!-- info -->
-                                </div> <!-- .item / 이벤트-->
+                                    <div class="swiper-slide item">
+                                        <div class="image">
+                                            <img src="image/portfolio/event-1.jpg"
+                                                alt="여름 시즌 무료배송 2개 이상 구매 시 추가할인 + 무료로 배송해 드립니다. 2026.05.01 부터 2026.09.01까지">
+                                        </div>
+                                        <div class="info">
+                                            <strong class="tit">여름 이벤트 배너</strong>
+                                            <p class="sub_txt">이벤트 배너 디자인 / 2026</p>
+                                            <!-- <p class="info_text">
+                                                [개인작업] 그리드에 맞춰 레이아웃 배치, 웹표준을 고려한 마크업 코딩 진행, 바닐라스크립트 활용하여 반응형 홈페이지 구현
+                                            </p> -->
+                                            <ul class="role">
+                                                <li>Figma</li>
+                                                <li>Google Flow</li>
+                                            </ul>
+                                            <div class="btns">
+                                                <li class="fill"><a href="">VIEW IMAGE</a></li>
+                                            </div><!-- btns -->
+                                        </div><!-- info -->
+                                    </div> <!-- .item / 이벤트-->
 
-                                <div class="swiper-slide item">
-                                    <div class="image">
-                                        <img src="image/portfolio/motion-kakao.gif" alt="카카오비즈니스">
-                                    </div>
-                                    <div class="info">
-                                        <strong class="tit">카카오 이벤트 배너</strong>
-                                        <p class="sub_txt">카카오비즈니스 디자인 / 2026</p>
-                                        <!-- <p class="info_text">
-                                            [개인작업] 그리드에 맞춰 레이아웃 배치, 웹표준을 고려한 마크업 코딩 진행, 바닐라스크립트 활용하여 반응형 홈페이지 구현
-                                        </p> -->
-                                        <p class="role">Figma</p>
-                                        <div class="btns">
-                                            <!-- <li class="stroke"><a href="">VIEW FIGMA</a></li> -->
-                                            <li class="fill"><a href="#">VISIT PROTOTYPE</a></li>
-                                        </div><!-- btns -->
-                                    </div><!-- info -->
-                                </div> <!-- .item / 카카오-->
+                                    <div class="swiper-slide item">
+                                        <div class="image">
+                                            <img src="image/portfolio/motion-kakao.gif" alt="카카오비즈니스">
+                                        </div>
+                                        <div class="info">
+                                            <strong class="tit">카카오 이벤트 배너</strong>
+                                            <p class="sub_txt">카카오비즈니스 디자인 / 2026</p>
+                                            <!-- <p class="info_text">
+                                                [개인작업] 그리드에 맞춰 레이아웃 배치, 웹표준을 고려한 마크업 코딩 진행, 바닐라스크립트 활용하여 반응형 홈페이지 구현
+                                            </p> -->
+                                            <ul class="role">
+                                                <li>Figma</li>
+                                            </ul>
+                                            <div class="btns">
+                                                <!-- <li class="stroke"><a href="">VIEW FIGMA</a></li> -->
+                                                <li class="fill"><a href="#">VISIT PROTOTYPE</a></li>
+                                            </div><!-- btns -->
+                                        </div><!-- info -->
+                                    </div> <!-- .item / 카카오-->
 
 
 
-                                <div class="swiper-slide item">
-                                    <div class="image">
-                                        <img src="image/portfolio/product-model.jpeg" alt="플로렌 제품 모델">
-                                    </div>
-                                    <div class="info">
-                                        <strong class="tit">제품 모델</strong>
-                                        <p class="sub_txt">메인페이지 리뉴얼 / 반응형 / 2023</p>
-                                        <!-- <p class="info_text">
-                                            [개인작업] 그리드에 맞춰 레이아웃 배치, 웹표준을 고려한 마크업 코딩 진행, 바닐라스크립트 활용하여 반응형 홈페이지 구현
-                                        </p> -->
-                                        <p class="role">Google Flow</p>
-                                        <div class="btns">
-                                            <li class="stroke"><a href="">VIEW FIGMA</a></li>
-                                            <li class="fill"><a href="#">VISIT WEBSITE</a></li>
-                                        </div><!-- btns -->
-                                    </div><!-- info -->
-                                </div> <!-- .item / 모델-->
+                                    <div class="swiper-slide item">
+                                        <div class="image">
+                                            <img src="image/portfolio/product-model.jpeg" alt="플로렌 제품 모델">
+                                        </div>
+                                        <div class="info">
+                                            <strong class="tit">제품 모델</strong>
+                                            <p class="sub_txt">AI활용 제품 모델 생성 / 2026</p>
+                                            <!-- <p class="info_text">
+                                                [개인작업] 그리드에 맞춰 레이아웃 배치, 웹표준을 고려한 마크업 코딩 진행, 바닐라스크립트 활용하여 반응형 홈페이지 구현
+                                            </p> -->
+                                            <ul class="role">
+                                                <li>Google Flow</li>
+                                            </ul>
+                                            <div class="btns">
+                                                <li class="stroke"><a href="">VIEW FIGMA</a></li>
+                                                <li class="fill"><a href="#">VISIT WEBSITE</a></li>
+                                            </div><!-- btns -->
+                                        </div><!-- info -->
+                                    </div> <!-- .item / 모델-->
 
 
 
-                                <div class="swiper-slide item">
-                                    <div class="image">
-                                        <img src="image/portfolio/motion-cupang-intro.gif" alt="쿠팡이츠 서비스 리뉴얼">
-                                    </div>
-                                    <div class="info">
-                                        <strong class="tit">쿠팡이츠 서비스 리뉴얼</strong>
-                                        <p class="sub_txt">메인페이지 리뉴얼 / 반응형 / 2023</p>
-                                        <!-- <p class="info_text">
-                                            [개인작업] 그리드에 맞춰 레이아웃 배치, 웹표준을 고려한 마크업 코딩 진행, 바닐라스크립트 활용하여 반응형 홈페이지 구현
-                                        </p> -->
-                                        <p class="role">Figma, ChatGPT</p>
-                                        <div class="btns">
-                                            <li class="stroke"><a href="">VIEW FIGMA</a></li>
-                                            <li class="fill"><a href="#">VISIT PROTOTYPE</a></li>
-                                        </div><!-- btns -->
-                                    </div><!-- info -->
-                                </div> <!-- .item -->
+                                    <div class="swiper-slide item">
+                                        <div class="image">
+                                            <img src="image/portfolio/motion-cupang-intro.gif" alt="쿠팡이츠 서비스 리뉴얼">
+                                        </div>
+                                        <div class="info">
+                                            <strong class="tit">쿠팡이츠 서비스 리뉴얼</strong>
+                                            <p class="sub_txt">기획/디자인 서비스 리뉴얼 / 2026</p>
+                                            <!-- <p class="info_text">
+                                                [개인작업] 그리드에 맞춰 레이아웃 배치, 웹표준을 고려한 마크업 코딩 진행, 바닐라스크립트 활용하여 반응형 홈페이지 구현
+                                            </p> -->
+                                            <ul class="role">
+                                                <li>Figma</li>
+                                                <li>ChatGPT</li>
+                                            </ul>
+                                            <div class="btns">
+                                                <li class="stroke"><a href="">VIEW FIGMA</a></li>
+                                                <li class="fill"><a href="#">VISIT PROTOTYPE</a></li>
+                                            </div><!-- btns -->
+                                        </div><!-- info -->
+                                    </div> <!-- .item -->
 
 
-                                <div class="swiper-slide item">
-                                    <div class="image">
-                                        <img src="image/portfolio/motion-cupang.gif" alt="쿠팡이츠 서비스 리뉴얼">
-                                    </div>
-                                    <div class="info">
-                                        <strong class="tit">쿠팡이츠 서비스 리뉴얼</strong>
-                                        <p class="sub_txt"> 기획 / 디자인 / 반응형 / 2026</p>
-                                        <!--  <p class="info_text">
-                                            [개인작업] 그리드에 맞춰 레이아웃 배치, 웹표준을 고려한 마크업 코딩 진행, 바닐라스크립트 활용하여 반응형 홈페이지 구현
-                                        </p> -->
-                                        <p class="role">Figma, CahtGPT</p>
-                                        <div class="btns">
-                                            <li class="stroke"><a href="">VIEW FIGMA</a></li>
-                                            <li class="fill"><a href="#">VISIT PROTOTYPE</a></li>
-                                        </div><!-- btns -->
-                                    </div><!-- info -->
-                                </div> <!-- .item -->
+                                    <div class="swiper-slide item">
+                                        <div class="image">
+                                            <img src="image/portfolio/motion-cupang.gif" alt="쿠팡이츠 서비스 리뉴얼">
+                                        </div>
+                                        <div class="info">
+                                            <strong class="tit">쿠팡이츠 서비스 리뉴얼</strong>
+                                            <p class="sub_txt">기획/디자인 서비스 리뉴얼 / 2026</p>
+                                            <!--  <p class="info_text">
+                                                [개인작업] 그리드에 맞춰 레이아웃 배치, 웹표준을 고려한 마크업 코딩 진행, 바닐라스크립트 활용하여 반응형 홈페이지 구현
+                                            </p> -->
+                                            <ul class="role">
+                                                <li>Figma</li>
+                                                <li>CahtGPT</li>
+                                            </ul>
+                                            <div class="btns">
+                                                <li class="stroke"><a href="">VIEW FIGMA</a></li>
+                                                <li class="fill"><a href="#">VISIT PROTOTYPE</a></li>
+                                            </div><!-- btns -->
+                                        </div><!-- info -->
+                                    </div> <!-- .item -->
 
 
 
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div><!-- swiper SideSlides -->
+                                </div>
+                                <!-- <div class="swiper-pagination"></div> -->
+                            </div><!-- swiper SideSlides -->
+                        </div>
 
                     </div><!-- .content -->
                 </section><!-- section-03 -->
 
-                <section class="section section-04">
+                <section class="section section-04" id="section-04">
+                    <div class="inner">
+                        <div class="title">
+                            <h3>영상 프로젝트</h3>
+                            <p>video Project</p>
+                        </div><!-- title -->
+                    </div><!-- .inner -->
+
+                    <div class="content inner">
+                        <p class="comment">※학습 목적의 개인 프로젝트이며, 본 제품 • 브랜드와 무관합니다.</p>
+                        <div class="swiper_wrap">
+                            <div class="swiper videoSlide">
+                                <div class="swiper-wrapper">
+
+
+
+                                    <div class="swiper-slide item">
+                                        <div class="image">
+                                            <video src="image/portfolio/video-beauty.mp4" autoplay muted loop></video>
+                                        </div>
+                                        <div class="info">
+                                            <strong class="tit">한율 유자 수면팩</strong>
+                                            <p class="sub_txt">AI활용 제품 홍보 영상</p>
+
+                                            <ul class="role">
+                                                <li>ChatGPT</li>
+                                                <li>Google Flow</li>
+                                                <li>Premiere Pro</li>
+
+                                            </ul>
+
+                                        </div><!-- info -->
+                                    </div> <!-- .item / 영상-->
+
+                                    <div class="swiper-slide item">
+                                        <div class="image">
+                                            <video src="image/portfolio/product.mp4" autoplay muted loop></video>
+                                        </div>
+                                        <div class="info">
+                                            <strong class="tit">멀티비타민</strong>
+                                            <p class="sub_txt">AI활용 제품 홍보영상</p>
+                                            <!-- <p class="info_text">
+                                                [개인작업] 그리드에 맞춰 레이아웃 배치, 웹표준을 고려한 마크업 코딩 진행, 바닐라스크립트 활용하여 반응형 홈페이지 구현
+                                            </p> -->
+                                            <ul class="role">
+                                                <li>Google Flow</li>
+                                                <li>Premiere Pro</li>
+                                            </ul>
+                                            <!-- <div class="btns">
+                                                <li class="stroke"><a href="">VIEW FIGMA</a></li>
+                                                <li class="fill"><a href="#">VISIT WEBSITE</a></li>
+                                            </div> --><!-- btns -->
+                                        </div><!-- info -->
+                                    </div> <!-- .item / 영상-->
+
+                                    <div class="swiper-slide item">
+                                        <div class="image">
+                                            <video src="image/portfolio/children.mp4" autoplay muted loop></video>
+                                        </div>
+                                        <div class="info">
+                                            <strong class="tit">어린이 일상생활</strong>
+                                            <p class="sub_txt">AI활용 브이로그</p>
+                                            <!-- <p class="info_text">
+                                                [개인작업] 그리드에 맞춰 레이아웃 배치, 웹표준을 고려한 마크업 코딩 진행, 바닐라스크립트 활용하여 반응형 홈페이지 구현
+                                            </p> -->
+                                            <ul class="role">
+                                                <li>ChatGPT</li>
+                                                <li>Claude</li>
+                                                <li>Google Flow</li>
+                                                <li>Premiere Pro</li>
+                                            </ul>
+                                            <!--  <div class="btns">
+                                                <li class="stroke"><a href="">VIEW FIGMA</a></li>
+                                                <li class="fill"><a href="#">VISIT WEBSITE</a></li>
+                                            </div> --><!-- btns -->
+                                        </div><!-- info -->
+                                    </div> <!-- .item / 영상-->
+
+                                </div>
+
+                            </div><!-- swiper SideSlides -->
+                        </div>
+
+                    </div><!-- .content -->
+
+
+
+
+                </section><!-- section-04 -->
+
+                <section class="section section-05" id="section-05">
                     <div class="inner">
                         <div class="title">
                             <h3>하수정 소개</h3>
@@ -741,7 +853,8 @@
                         <div class="content">
                             <div class="left">
                                 <div class="image">
-                                    <img src="image/user.jpg" alt="">
+                                    <!-- <img src="image/user.jpg" alt=""> -->
+                                     <video src="image/user.mp4" controls></video>
                                 </div>
 
                             </div><!-- .left -->
@@ -750,8 +863,8 @@
                                 <p>
                                     안녕하세요. <strong>하수정</strong>입니다.<br />
                                     HTML, CSS, Javascript, jQuery, figma, Photoshop, Illustrator등 다양한 툴을 활용하여 기획부터 UI/UX
-                                    디자인, 웹 퍼블리싱까지 전 과정을 수행하며, AI 도움 없이도 반응형 웹사이트를 어려움 없이 구현할 수 있습니다.<br />유관 부서와의 협업과
-                                    소통을 통해 서비스 품질을 개선하며, AI를 활용한 기획 고도화와 이미지,영상 콘텐츠 제작을 통해 업무 효율성과 콘텐츠 완성도를 높이고자 합니다.
+                                    디자인, 웹 퍼블리싱까지 전 과정을 수행하며, AI 도움 없이 반응형 웹사이트를 구현할 수 있습니다.<br />유관 부서와의 협업과
+                                    소통을 통해 서비스 품질을 개선하며, AI를 활용한 기획과 이미지, 영상 콘텐츠 제작을 통해 업무 효율성과 콘텐츠 완성도를 높이고자 합니다.
                                 </p>
                                 <strong class="title">Work Experience</strong>
                                 <ul class="work">
@@ -796,51 +909,43 @@
             </div><!-- #container -->
         </main>
 
-        <footer class="footer" id="footer">
-            <div class="inner">
-                <strong>ha su jeong</strong>
-                <div class="skill">
-                    <div>
-                        <!-- <strong>디자인</strong> -->
-                        <ul>
-                            <li><img src="image/icon-figma.svg" alt=""><span>피그마</span></li>
-                            <li><img src="image/icon-photoshop.svg" alt=""><span>포토샵</span></li>
-                            <li><img src="image/icon-illustrator.svg" alt=""><span>일러스트레이터</span></li>
-                            <li><img src="image/icon-indesign.svg" alt=""><span>인디자인-약간</span></li>
-                            <li><img src="image/icon-premiere.svg" alt=""><span>프리미어프로-약간</span></li>
-                            <li><img src="image/icon-effect.svg" alt=""><span>에프터이펙트-약간</span></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <!-- <strong>개발언어</strong> -->
-                        <ul>
-                            <li><img src="image/icon-html.svg" alt=""><span>html5</span></li>
-                            <li><img src="image/icon-css3.svg" alt=""><span>css3/scss</span></li>
-                            <li><img src="image/icon-js.svg" alt=""><span>javascrip</span></li>
-                            <li><img src="image/icon-jquery.svg" alt=""><span>jquery</span></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <!-- <strong>AI (Artificial Intelligence)</strong> -->
-                        <ul>
-                            <li><img src="image/icon-chatgpt.svg" alt=""><span>챗지피티</span></li>
-                            <li><img src="image/icon-flow.svg" alt=""><span>구글플로우</span></li>
-                            <li><img src="image/icon-claude.svg" alt=""><span>클로드</span></li>
-                        </ul>
-                    </div>
-
-
-
-                </div>
-
-                <div>
-                    <a href="tel:010-8563-7815">010-8563-7815</a>
-                </div>
+        <div class="skill">
+            <div>
+                <!-- <strong>디자인</strong> -->
                 <ul>
+                    <li><img src="image/icon-figma.svg" alt=""><span>피그마</span></li>
+                    <li><img src="image/icon-photoshop.svg" alt=""><span>포토샵</span></li>
+                    <li><img src="image/icon-illustrator.svg" alt=""><span>일러스트레이터</span></li>
+                    <li><img src="image/icon-indesign.svg" alt=""><span>인디자인</span></li>
+                    <li><img src="image/icon-premiere.svg" alt=""><span>프리미어프로</span></li>
+                    <!-- <li><img src="image/icon-effect.svg" alt=""><span>에프터이펙트-약간</span></li> -->
+
+                    <li><img src="image/icon-html.svg" alt=""><span>html5</span></li>
+                    <li><img src="image/icon-css3.svg" alt=""><span>css3/scss</span></li>
+                    <li><img src="image/icon-js.svg" alt=""><span>javascrip</span></li>
+                    <li><img src="image/icon-jquery.svg" alt=""><span>jquery</span></li>
+
+                    <li><img src="image/icon-chatgpt.svg" alt=""><span>챗지피티</span></li>
+                    <li><img src="image/icon-flow.svg" alt=""><span>구글플로우</span></li>
+                    <li><img src="image/icon-claude.svg" alt=""><span>클로드</span></li>
+                </ul>
+            </div> 
+        </div><!-- skill -->
+
+        <footer class="footer section" id="footer">
+            <div class="inner">
+                <strong class="name">ha su jeong</strong>
+
+
+                <div class="tell">
+                    <a href="tel:010-8563-7815">
+                        <img src="image/icon-call.svg" alt="전화하기" title="전화하기">
+                        <span>010-8563-7815</span></a>
+                </div>
+                <!-- <ul>
                     <li><a href="#">포트폴리오</a></li>
                     <li><a href="#">이력서</a></li>
-                </ul>
+                </ul> -->
                 <p>ⓒ 2026 by 하수정</p>
                 <p>본 사이트는 개인 포트폴리오 사이트로 제작되어 상업적 목적이 아닙니다.</p>
             </div><!-- .inner -->
