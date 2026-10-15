@@ -646,6 +646,7 @@ body {
 .section-03 .content .comment {
   margin-bottom: 20px;
   font-size: 15px;
+  color: #c5c5c5;
 }
 .section-03 .content .swiper_wrap {
   max-width: 1400px;
@@ -726,6 +727,8 @@ body {
 }
 .section-04 .comment {
   margin-bottom: 20px;
+  font-size: 15px;
+  color: #c5c5c5;
 }
 .section-04 .content {
   margin-top: 40px;
