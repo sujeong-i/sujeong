@@ -265,19 +265,20 @@ body {
 }
 
 /* 스크롤바 디자인 */
-.section .swiper-slide::-webkit-scrollbar {
+.section-02 .swiper-slide {max-height: 70vh;}
+.section-02 .swiper-slide::-webkit-scrollbar {
       width: 6px;  /* 세로 스크롤바 너비 */
        height: 10px; /* 가로 스크롤바 높이 */
 }
 
 /* 스크롤바 트랙(뒷배경) 디자인 */
-.section .swiper-slide::-webkit-scrollbar-track {
+.section-02 .swiper-slide::-webkit-scrollbar-track {
   background-color: #e3edff;
 //   border-radius: 5px;
 }
 
 /* 스크롤바 썸(움직이는 바) 디자인 */
-.section .swiper-slide::-webkit-scrollbar-thumb {
+.section-02 .swiper-slide::-webkit-scrollbar-thumb {
   background-color: var(--color-accent);
   border-radius: 5px;
 }
@@ -360,7 +361,9 @@ body {
      .video {
         width: 100%;
         height: 100%;
-        
+        position: absolute;
+        top: 0;
+        left: 0;
         // display: flex;
         // align-items: center;
         // justify-content: center;
@@ -369,7 +372,7 @@ body {
             position: absolute;
             top: 0;
             left: 0;
-            z-index: 999;
+            z-index: 9;
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -950,7 +953,7 @@ body {
             display: flex;
             flex-wrap: wrap;
             li {
-                width: calc(100% / 6); 
+                width: calc(100% / 7); 
                 height: 60px;
                 display: flex;
                 align-items: center; 
@@ -958,10 +961,10 @@ body {
                 gap: 6px;
                 border: 1px solid var(--color-primary);
                 border-right: 0;
-                &:nth-child(-n + 6) {
+                &:nth-child(-n + 7) {
                     border-bottom: 0;
                 }
-                &:nth-child(6n) {
+                &:nth-child(7n) {
                     border-right: 1px solid var(--color-primary);
                 }
                 img {
