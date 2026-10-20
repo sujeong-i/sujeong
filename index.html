@@ -23,17 +23,17 @@
     <script>
         $(function () {
 
-                        // Fancybox 최신 버전 기준 초기화
+            // Fancybox 최신 버전 기준 초기화
             Fancybox.bind("[data-fancybox='gallery']", {
-            // 기본적으로 Thumbs 플러그인이 활성화되어 있어야 합니다.
-            Thumbs: {
-                type: "modern" // modern, classic, scrollable 중 선택 가능
-            }
+                // 기본적으로 Thumbs 플러그인이 활성화되어 있어야 합니다.
+                Thumbs: {
+                    type: "modern" // modern, classic, scrollable 중 선택 가능
+                }
             });
 
-            
+
             let header = document.getElementById('header');
-            let section_02 = document.getElementById('section-02'); 
+            let section_02 = document.getElementById('section-02');
 
             console.log(section_02.offsetTop)
 
@@ -102,7 +102,7 @@
                 grabCursor: true,
             });
 
-            $('.close').on('click', function(){
+            $('.close').on('click', function () {
                 $('.video').hide();
             });
 
@@ -113,7 +113,7 @@
 </head>
 
 <body>
-    
+
     <div id="wrap">
         <header class="header" id="header">
             <div class="inner">
@@ -155,7 +155,7 @@
                         </div>
                     </div><!-- text_wrap -->
 
-                     
+
                     <div class="image">
                         <img src="image/visual.png" alt="체인이미지">
                     </div>
@@ -705,7 +705,7 @@
                                             <ul class="role">
                                                 <li>Google Flow</li>
                                             </ul>
-                                           <!--  <div class="btns">
+                                            <!--  <div class="btns">
                                                 <li class="stroke"><a href="">VIEW FIGMA</a></li>
                                                 <li class="fill"><a href="#">VISIT WEBSITE</a></li>
                                             </div> --><!-- btns -->
@@ -752,7 +752,7 @@
                                             </ul>
                                             <div class="btns">
                                                 <!-- <li class="stroke"><a href="">VIEW FIGMA</a></li> -->
-                                                 <li class="fill"><a href="image/portfolio/process-coupang.pdf" target="_blank">View Process</a></li>
+                                                <li class="fill"><a href="image/portfolio/process-coupang.pdf" target="_blank">View Process</a></li>
 
                                             </div><!-- btns -->
                                         </div><!-- info -->
@@ -829,9 +829,9 @@
 
                                     <div class="swiper-slide item">
                                         <a href="image/portfolio/children.mp4" data-fancybox="gallery" data-width="720" data-height="1280" data-thumb-src="image/portfolio/children-thumb.png" data-type="html5video">
-                                        <div class="image">
-                                            <video src="image/portfolio/children.mp4" autoplay muted loop></video>
-                                        </div>
+                                            <div class="image">
+                                                <video src="image/portfolio/children.mp4" autoplay muted loop></video>
+                                            </div>
                                         </a>
                                         <div class="info">
                                             <strong class="tit">어린이 일상생활</strong>
@@ -854,9 +854,9 @@
 
                                     <div class="swiper-slide item">
                                         <a href="image/portfolio/maple.mp4" data-fancybox="gallery" data-width="720" data-height="1280" data-thumb-src="image/portfolio/maple-thumb.png" data-type="html5video">
-                                        <div class="image">
-                                            <video src="image/portfolio/maple.mp4" autoplay muted loop></video>
-                                        </div>
+                                            <div class="image">
+                                                <video src="image/portfolio/maple.mp4" autoplay muted loop></video>
+                                            </div>
                                         </a>
                                         <div class="info">
                                             <strong class="tit">머쉬룸의 차원이동</strong>
@@ -879,9 +879,9 @@
 
                                     <div class="swiper-slide item">
                                         <a href="image/portfolio/fall-clothe.mp4" data-fancybox="gallery" data-width="720" data-height="1280" data-thumb-src="image/portfolio/fall-clothe-thumb.png" data-type="html5video">
-                                        <div class="image">
-                                            <video src="image/portfolio/fall-clothe.mp4" autoplay muted loop></video>
-                                        </div>
+                                            <div class="image">
+                                                <video src="image/portfolio/fall-clothe.mp4" autoplay muted loop></video>
+                                            </div>
                                         </a>
                                         <div class="info">
                                             <strong class="tit">가을옷 홍보영상</strong>
@@ -925,7 +925,7 @@
                             <div class="left">
                                 <div class="image">
                                     <!-- <img src="image/user.jpg" alt=""> -->
-                                     <video src="image/user.mp4" controls></video>
+                                    <video src="image/user.mp4" controls></video>
                                 </div>
 
                             </div><!-- .left -->
@@ -1002,7 +1002,7 @@
                     <li><img src="image/icon-flow.svg" alt=""><span>구글플로우</span></li>
                     <li><img src="image/icon-claude.svg" alt=""><span>클로드</span></li>
                 </ul>
-            </div> 
+            </div>
         </div><!-- skill -->
 
         <footer class="footer section" id="footer">
