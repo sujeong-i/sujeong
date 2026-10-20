@@ -641,65 +641,79 @@ body {
 .section-02 {
   /* .content_wrap */
 } /* .section-02 */
-.section-03 {
+.section-03,
+.section-04 {
   background-color: var(--color-bg);
   padding: 200px 0;
 }
-.section-03 .content {
+.section-03 .content,
+.section-04 .content {
   margin-top: 40px;
   overflow: hidden;
-  cursor: none;
 }
-.section-03 .content .comment {
+.section-03 .content .comment,
+.section-04 .content .comment {
   margin-bottom: 20px;
   font-size: 15px;
   color: #c5c5c5;
 }
-.section-03 .content .swiper_wrap {
+.section-03 .content .swiper_wrap,
+.section-04 .content .swiper_wrap {
   max-width: 1400px;
   margin: 0 auto;
 }
-.section-03 .content .swiper {
+.section-03 .content .swiper,
+.section-04 .content .swiper {
   overflow: visible;
 }
-.section-03 .item {
+.section-03 .item,
+.section-04 .item {
   width: 440px;
   border: 1px solid var(--color-basic);
 }
-.section-03 .item .image {
+.section-03 .item .image,
+.section-04 .item .image {
   min-height: 460px;
   overflow: hidden;
 }
-.section-03 .item .image img {
+.section-03 .item .image img,
+.section-04 .item .image img {
   width: 100%;
 }
-.section-03 .item .image video {
+.section-03 .item .image video,
+.section-04 .item .image video {
   width: 100%;
 }
-.section-03 .item .info {
+.section-03 .item .info,
+.section-04 .item .info {
   padding: 20px;
 }
-.section-03 .item .info .tit {
+.section-03 .item .info .tit,
+.section-04 .item .info .tit {
   display: block;
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 5px;
 }
-.section-03 .item .info .sub_txt {
+.section-03 .item .info .sub_txt,
+.section-04 .item .info .sub_txt {
   font-size: 16px;
   color: #555;
 }
-.section-03 .item .info .info_text {
+.section-03 .item .info .info_text,
+.section-04 .item .info .info_text {
   font-size: 16px;
   line-height: 1.5;
   margin: 8px 0 12px;
 }
-.section-03 .item .info .role {
+.section-03 .item .info .role,
+.section-04 .item .info .role {
   display: flex;
   gap: 4px;
   flex-wrap: wrap;
 }
-.section-03 .item .info .role li {
+.section-03 .item .info .role li,
+.section-04 .item .info .role li {
   border: 1px solid var(--color-basic);
   font-size: 14px;
   font-weight: 500;
@@ -709,18 +723,22 @@ body {
   align-items: center;
   color: var(--color-basic);
 }
-.section-03 .item .info .role {
+.section-03 .item .info .role,
+.section-04 .item .info .role {
   margin-top: 20px;
 }
-.section-03 .item .info .btns {
+.section-03 .item .info .btns,
+.section-04 .item .info .btns {
   display: flex;
   gap: 8px;
   margin-top: 20px;
 }
-.section-03 .item .info .btns li {
+.section-03 .item .info .btns li,
+.section-04 .item .info .btns li {
   width: 100%;
 }
-.section-03 .item .info .btns li a {
+.section-03 .item .info .btns li a,
+.section-04 .item .info .btns li a {
   height: 46px;
   display: flex;
   align-items: center;
@@ -741,6 +759,7 @@ body {
   margin-top: 40px;
 }
 .section-04 .content .item {
+  width: 360px;
   border: 1px solid var(--color-basic);
 }
 .section-04 .content .item video {

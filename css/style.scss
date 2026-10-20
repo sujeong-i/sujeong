@@ -749,14 +749,15 @@ body {
 }/* .section-02 */
 
 
-.section-03 {
+.section-03,
+.section-04 {
     background-color: var(--color-bg);
     padding: 200px 0;
      
     .content {
         margin-top: 40px;
         overflow: hidden;
-        cursor: none;
+        // cursor: none;
         .comment {
             margin-bottom: 20px;
             font-size: 15px;
@@ -849,6 +850,7 @@ body {
     .content {
         margin-top: 40px;
         .item {
+            width: 360px;
             border: 1px solid var(--color-basic);
             video {
                 width: 100%;
