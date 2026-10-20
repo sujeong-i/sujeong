@@ -657,6 +657,10 @@ body {
   font-size: 15px;
   color: #c5c5c5;
 }
+.section-03 .content .swiper-wrapper,
+.section-04 .content .swiper-wrapper {
+  cursor: auto !important;
+}
 .section-03 .content .swiper_wrap,
 .section-04 .content .swiper_wrap {
   max-width: 1400px;
