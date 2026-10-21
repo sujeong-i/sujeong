@@ -88,18 +88,36 @@
                 //     el: '.swiper-pagination',
                 //     clickable: true,
                 // },
-                grabCursor: true,
+                // grabCursor: true,
             });
 
             var swiper = new Swiper('.videoSlide', {
-                slidesPerView: 'auto',
-                spaceBetween: 24,
+                // slidesPerView: 'auto',
+                // spaceBetween: 24,
                 // centeredSlides: true,
                 // pagination: {
                 //     el: '.swiper-pagination',
                 //     clickable: true,
                 // },
-                grabCursor: true,
+                // grabCursor: true,
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1.5, 
+                    },  
+                    640: {
+                        slidesPerView: 2.5, 
+                        spaceBetween: 20,
+                    },
+                    1024: {
+                        slidesPerView: 3.6, 
+                        spaceBetween: 20,
+
+                    },
+                    1280: {
+                        slidesPerView: 'auto', 
+                        spaceBetween: 24,
+                    },
+                },
             });
 
             $('.close').on('click', function () {
@@ -357,7 +375,8 @@
                                             </ul>
                                         </div><!-- .info -->
                                         <ul class="btns">
-                                            <li class="stroke"><a href="image/portfolio/process-floren.pdf" target="_blank">VIEW PROCESS</a></li>
+                                            <li class="stroke"><a href="image/portfolio/process-floren.pdf"
+                                                    target="_blank">VIEW PROCESS</a></li>
                                             <li class="stroke"><a
                                                     href="https://www.figma.com/design/hdeG4G8UedG6tMlUzxewfl/%ED%94%8C%EB%A1%9C%EB%A0%8C-%EC%9B%90%EB%B3%B8?node-id=1-4&t=6dRo32BtzR9hYG6H-1"
                                                     target="_blank">VIEW FIGMA</a></li>
@@ -642,8 +661,11 @@
                                                 <li>Javascript</li>
                                             </ul>
                                             <div class="btns">
-                                                <li class="stroke"><a href="https://www.figma.com/design/z86n15sz7dvFSP30YqpIN4/%EB%B9%84%EC%97%90%EB%A9%94%EC%A2%85_%EC%9B%90%EB%B3%B8?node-id=0-1&p=f&t=tfUn4u53ZcZXRRMd-0" target="_blank">VIEW FIGMA</a></li>
-                                                <li class="fill"><a href="https://jwebdew.github.io/vieetmaison/" target="_blank">VISIT WEBSITE</a></li>
+                                                <li class="stroke"><a
+                                                        href="https://www.figma.com/design/z86n15sz7dvFSP30YqpIN4/%EB%B9%84%EC%97%90%EB%A9%94%EC%A2%85_%EC%9B%90%EB%B3%B8?node-id=0-1&p=f&t=tfUn4u53ZcZXRRMd-0"
+                                                        target="_blank">VIEW FIGMA</a></li>
+                                                <li class="fill"><a href="https://jwebdew.github.io/vieetmaison/"
+                                                        target="_blank">VISIT WEBSITE</a></li>
                                             </div><!-- btns -->
                                         </div><!-- info -->
                                     </div> <!-- .item / 웹-->
@@ -685,7 +707,9 @@
                                             </ul>
                                             <div class="btns">
                                                 <!-- <li class="stroke"><a href="">VIEW FIGMA</a></li> -->
-                                                <li class="fill"><a href="https://www.figma.com/proto/z3Q5oJphizU4cJVIMv0zE4/%ED%95%98%EC%88%98%EC%A0%95?node-id=40000036-337&viewport=490%2C246%2C0.18&t=IrOgnvP0KCSHvN0s-1&scaling=scale-down&content-scaling=fixed&page-id=40000036%3A326" target="_blank">VISIT PROTOTYPE</a></li>
+                                                <li class="fill"><a
+                                                        href="https://www.figma.com/proto/z3Q5oJphizU4cJVIMv0zE4/%ED%95%98%EC%88%98%EC%A0%95?node-id=40000036-337&viewport=490%2C246%2C0.18&t=IrOgnvP0KCSHvN0s-1&scaling=scale-down&content-scaling=fixed&page-id=40000036%3A326"
+                                                        target="_blank">VISIT PROTOTYPE</a></li>
                                             </div><!-- btns -->
                                         </div><!-- info -->
                                     </div> <!-- .item / 카카오-->
@@ -730,7 +754,8 @@
                                             </ul>
                                             <div class="btns">
                                                 <!-- <li class="stroke"><a href="">VIEW FIGMA</a></li> -->
-                                                <li class="fill"><a href="image/portfolio/process-coupang.pdf" target="_blank">View Process</a></li>
+                                                <li class="fill"><a href="image/portfolio/process-coupang.pdf"
+                                                        target="_blank">View Process</a></li>
                                             </div><!-- btns -->
                                         </div><!-- info -->
                                     </div> <!-- .item -->
@@ -752,7 +777,8 @@
                                             </ul>
                                             <div class="btns">
                                                 <!-- <li class="stroke"><a href="">VIEW FIGMA</a></li> -->
-                                                <li class="fill"><a href="image/portfolio/process-coupang.pdf" target="_blank">View Process</a></li>
+                                                <li class="fill"><a href="image/portfolio/process-coupang.pdf"
+                                                        target="_blank">View Process</a></li>
 
                                             </div><!-- btns -->
                                         </div><!-- info -->
@@ -785,9 +811,13 @@
 
 
                                     <div class="swiper-slide item">
-                                        <a href="image/portfolio/video-beauty.mp4" data-fancybox="gallery" data-width="720" data-height="1280" data-thumb-src="image/portfolio/video-beauty-thumb.png" data-type="html5video">
+                                        <a href="image/portfolio/video-beauty.mp4" data-fancybox="gallery"
+                                            data-width="720" data-height="1280"
+                                            data-thumb-src="image/portfolio/video-beauty-thumb.png"
+                                            data-type="html5video">
                                             <div class="image">
-                                                <video src="image/portfolio/video-beauty.mp4" autoplay muted loop></video>
+                                                <video src="image/portfolio/video-beauty.mp4" autoplay muted
+                                                    loop></video>
                                             </div>
                                         </a>
                                         <div class="info">
@@ -805,7 +835,9 @@
                                     </div> <!-- .item / 영상-->
 
                                     <div class="swiper-slide item">
-                                        <a href="image/portfolio/product.mp4" data-fancybox="gallery" data-width="720" data-height="1280" data-thumb-src="image/portfolio/product-thumb.png" data-type="html5video">
+                                        <a href="image/portfolio/product.mp4" data-fancybox="gallery" data-width="720"
+                                            data-height="1280" data-thumb-src="image/portfolio/product-thumb.png"
+                                            data-type="html5video">
                                             <div class="image">
                                                 <video src="image/portfolio/product.mp4" autoplay muted loop></video>
                                             </div>
@@ -828,7 +860,9 @@
                                     </div> <!-- .item / 영상-->
 
                                     <div class="swiper-slide item">
-                                        <a href="image/portfolio/children.mp4" data-fancybox="gallery" data-width="720" data-height="1280" data-thumb-src="image/portfolio/children-thumb.png" data-type="html5video">
+                                        <a href="image/portfolio/children.mp4" data-fancybox="gallery" data-width="720"
+                                            data-height="1280" data-thumb-src="image/portfolio/children-thumb.png"
+                                            data-type="html5video">
                                             <div class="image">
                                                 <video src="image/portfolio/children.mp4" autoplay muted loop></video>
                                             </div>
@@ -853,7 +887,9 @@
                                     </div> <!-- .item / 영상-->
 
                                     <div class="swiper-slide item">
-                                        <a href="image/portfolio/maple.mp4" data-fancybox="gallery" data-width="720" data-height="1280" data-thumb-src="image/portfolio/maple-thumb.png" data-type="html5video">
+                                        <a href="image/portfolio/maple.mp4" data-fancybox="gallery" data-width="720"
+                                            data-height="1280" data-thumb-src="image/portfolio/maple-thumb.png"
+                                            data-type="html5video">
                                             <div class="image">
                                                 <video src="image/portfolio/maple.mp4" autoplay muted loop></video>
                                             </div>
@@ -878,9 +914,13 @@
                                     </div> <!-- .item / 영상-->
 
                                     <div class="swiper-slide item">
-                                        <a href="image/portfolio/fall-clothe.mp4" data-fancybox="gallery" data-width="720" data-height="1280" data-thumb-src="image/portfolio/fall-clothe-thumb.png" data-type="html5video">
+                                        <a href="image/portfolio/fall-clothe.mp4" data-fancybox="gallery"
+                                            data-width="720" data-height="1280"
+                                            data-thumb-src="image/portfolio/fall-clothe-thumb.png"
+                                            data-type="html5video">
                                             <div class="image">
-                                                <video src="image/portfolio/fall-clothe.mp4" autoplay muted loop></video>
+                                                <video src="image/portfolio/fall-clothe.mp4" autoplay muted
+                                                    loop></video>
                                             </div>
                                         </a>
                                         <div class="info">
