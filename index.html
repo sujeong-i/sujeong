@@ -89,6 +89,25 @@
                 //     clickable: true,
                 // },
                 // grabCursor: true,
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1.5,
+                        spaceBetween: 16,
+                    },
+                    640: {
+                        slidesPerView: 2.2,
+                        spaceBetween: 16,
+                    },
+                    1024: {
+                        slidesPerView: 3.6,
+                        spaceBetween: 20,
+
+                    },
+                    1280: {
+                        slidesPerView: 'auto',
+                        spaceBetween: 24,
+                    },
+                },
             });
 
             var swiper = new Swiper('.videoSlide', {
@@ -102,11 +121,12 @@
                 // grabCursor: true,
                 breakpoints: {
                     320: {
-                        slidesPerView: 1.5,
+                        slidesPerView: 1.2,
+                        spaceBetween: 12,
                     },
                     640: {
                         slidesPerView: 2.5,
-                        spaceBetween: 20,
+                        spaceBetween: 16,
                     },
                     1024: {
                         slidesPerView: 3.6,
@@ -1050,9 +1070,15 @@
 
 
                 <div class="tell">
+                    <a href="image/portfolio.pdf" target="_blank">
+                        <img src="image/icon-call.svg" alt="전화하기" title="전화하기">
+                        <span>포트폴리오 PDF</span>
+                    </a>
+
                     <a href="tel:010-8563-7815">
                         <img src="image/icon-call.svg" alt="전화하기" title="전화하기">
-                        <span>010-8563-7815</span></a>
+                        <span>010-8563-7815</span>
+                    </a>
                 </div>
                 <!-- <ul>
                     <li><a href="#">포트폴리오</a></li>
